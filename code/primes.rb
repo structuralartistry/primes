@@ -1,24 +1,38 @@
 class Primes
 
-  def get_prime_numbers(how_many)
+  def generate_multiplication_output_array(input)
+    output = []
 
-  end
-
-  def sieve_of_eratosthene(size)
-      arr=(0..size).to_a
-      arr[0]=nil
-      arr[1]=nil
-      max=size
-      (size/2+1).times do |n|
-          if(arr[n]!=nil) then
-              cnt=2*n
-              while cnt <= max do
-                  arr[cnt]=nil
-                  cnt+=n
-              end
-          end
+    input.each_with_index do |number, index|
+      output[index] = []
+      input.each_with_index do |n, i|
+        output[index][i] = number * n
       end
-      arr.compact!
+    end
+
+    output
   end
 
+#  def get_prime_numbers(how_many)
+#
+#  end
+#
+## input 'n',
+#  def sieve_of_eratosthene(size)
+#      arr=(0..size).to_a
+#      arr[0]=nil
+#      arr[1]=nil
+#      max=size
+#      (size/2+1).times do |n|
+#          if(arr[n]!=nil) then
+#              cnt=2*n
+#              while cnt <= max do
+#                  arr[cnt]=nil
+#                  cnt+=n
+#              end
+#          end
+#      end
+#      arr.compact!
+#  end
+#
 end
