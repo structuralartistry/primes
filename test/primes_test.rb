@@ -15,6 +15,19 @@ class PrimesTest < Test::Unit::TestCase
     assert_equal(841, output[9][9])
   end
 
+  def test_add_header_rows_to_output_array
+    primes = Primes.new
+    input = [2,3,5]
+    output_array = [[4, 6, 10], [6, 9, 15], [10, 15, 25]]
+
+    output_with_headers = primes.add_headers_to_output_array(input, output_array)
+
+    assert_equal(4, output_with_headers.length)
+
+    assert_equal(3, output_with_headers[2][0])
+    output_with_headers.each { |i| assert_equal(4, i.length) }
+  end
+
 #  def test_get_prime_numbers
 #    assert_equal([2, 3, 5, 7, 11], primes.get_prime_numbers(5))
 #  end

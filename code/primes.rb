@@ -13,6 +13,19 @@ class Primes
     output
   end
 
+  def add_headers_to_output_array(input, output_array)
+    # add the vertical first row header
+    output_array.each_with_index do |e, i|
+      e.unshift(input[i])
+    end
+
+    # add the top row
+    input.unshift(nil)
+    output_array.unshift(input)
+
+    output_array
+  end
+
 #  def get_prime_numbers(how_many)
 #
 #  end
