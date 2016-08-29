@@ -7,7 +7,7 @@ To run tests:
 To run code:
 
   1) start IRB session in console `irb`
-  2) `load 'code/primes.rb'
+  2) `load 'code/primes.rb'`
   3) `Primes.new.print_primes_matrix(n)` where 'n' is now many primes you wish to deliver
 
 Notes/Comments:
